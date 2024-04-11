@@ -1,7 +1,7 @@
 "use client";
 import { BookingResponse } from "@/types/booking";
 import SearchFiltersComponent from "../search-filters/search-filters.component";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import { Filters } from "@/types/filter";
 import SearchCard from "../property-card/property-card.component";
 import { ResultContainer } from "./search-results.styles";
@@ -82,50 +82,38 @@ export default function SearchDisplay({
     ]
   );
 
-  // const handleFilterChange =
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  let holidayList = useMemo(
-    () =>
-      results.holidays.map((holiday) => {
-        //I can also use filter here, but if I do so... I will have to map through the components later anyways
-        let valid = true;
-        if (
-          amenityFilterCount > 0 ||
-          priceFilterCount > 0 ||
-          ratingFilterCount > 0
-        ) {
-          valid = checkIsValid(
-            holiday,
-            ratingFilterCount,
-            ratingsState,
-            amenityFilterCount,
-            amenityState,
-            priceFilterCount,
-            priceState
-          );
-        }
+  let count = 0;
+  let holidayList = results.holidays.map((holiday) => {
+    //I can also use filter here, but if I do so... I will have to map through the components later anyways
+    let valid = true;
+    if (
+      amenityFilterCount > 0 ||
+      priceFilterCount > 0 ||
+      ratingFilterCount > 0
+    ) {
+      valid = checkIsValid(
+        holiday,
+        ratingFilterCount,
+        ratingsState,
+        amenityFilterCount,
+        amenityState,
+        priceFilterCount,
+        priceState
+      );
+    }
 
-        if (valid) {
-          return (
-            <SearchCard
-              key={holiday.hotel.id}
-              hotel={holiday.hotel}
-              pricePerPerson={holiday.pricePerPerson}
-            />
-          );
-        }
-        return null;
-      }),
-    [
-      results.holidays,
-      amenityFilterCount,
-      priceFilterCount,
-      ratingFilterCount,
-      ratingsState,
-      amenityState,
-      priceState,
-    ]
-  );
+    if (valid) {
+      count++;
+      return (
+        <SearchCard
+          key={holiday.hotel.id}
+          hotel={holiday.hotel}
+          pricePerPerson={holiday.pricePerPerson}
+        />
+      );
+    }
+    return null;
+  });
 
   //enable this line for mocked pagination
   //holidayList = holidayList.slice(0, 10);
@@ -135,7 +123,7 @@ export default function SearchDisplay({
       <SearchFiltersComponent handleChange={handleFilterChange} />
       <ResultContainer id="search-results">
         <section>
-          <h2>{holidayList.length} results found</h2>
+          <h2>{count} results found</h2>
         </section>
         {holidayList}
       </ResultContainer>
