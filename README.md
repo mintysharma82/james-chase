@@ -12,11 +12,11 @@ For the test you should adhere to the following conditions:
 
 - The code must be your own work. If you have a strong case to use a small code snippet of someone else's e.g. a
   boilerplate function, it must be clearly commented and attributed to the original author
-  **checked** the star component inline svg is copy from the live site (just the URLs) and I have also checked the styles (none of the styles is copy over as you can see CSS is very limited) as I did not know the font size and colors used etc. I have not taken anything that you would not get from wireframes.
+  - **checked** the star component inline svg is copy from the live site (just the URLs) and I have also checked the styles (none of the styles is copy over as you can see CSS is very limited) as I did not know the font size and colors used etc. I have not taken anything that you would not get from wireframes.
 - You must include any unit tests you think are appropriate - Cypress is set up for you already
-- **checked** I have however used Jest as I have basic knowledge of cypress but it would have been more time consuming for me. Please run command `yarn run test:watch` to view the coverage. I have provided as much testing as I could given it is not live code, as there was no mention of coverage percentage (All new files are covered).
+  - **checked** I have however used Jest as I have basic knowledge of cypress but it would have been more time consuming for me. Please run command `yarn run test:watch` to view the coverage. I have provided as much testing as I could given it is not live code, as there was no mention of coverage percentage (All new files are covered).
 - Give consideration to performance and accessibility. Lighthouse scores are high - please keep them that way
-- **checked** the only issue is that there are more than 80 hotels displayed on the page, and pagination was not part of the requirements. If we enable pagination, the performance will be even better. We can also hide the filters on initial load and I was limited in terms of time, so decided not to do it as part of test... in live environment I will do it for sure.
+  - **checked** the only issue is that there are more than 80 hotels displayed on the page, and pagination was not part of the requirements. If we enable pagination, the performance will be even better. We can also hide the filters on initial load and I was limited in terms of time, so decided not to do it as part of test... in live environment I will do it for sure.
 - Code must be clear, concise and human readable - **checked**
 - We do not want to see how well you can use a UI framework. This is a test and we want to see what you can create so please avoid Bootstrap, Material UI etc - **checked**
 - Simple CSS has been included but please use whatever CSS flavour you like: LESS, Emotion, Styled Components etc - **checked**
