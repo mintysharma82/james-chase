@@ -8,14 +8,14 @@ import {
   Price,
   Button,
 } from "./property-card.styles";
-import { lazy, useState } from "react";
+import { lazy, memo, useState } from "react";
 import { getDisplayDetails } from "./property-card.functions";
 
 const SearchCardDetails = lazy(
   () => import("./property-card-details.component")
 );
 
-export default function SearchCard({
+const SearchCard = memo(function SearchCard({
   hotel,
   pricePerPerson,
 }: {
@@ -53,4 +53,6 @@ export default function SearchCard({
       </CardActions>
     </Card>
   );
-}
+});
+
+export default SearchCard;

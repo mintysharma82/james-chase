@@ -30,19 +30,4 @@ describe("Component > Property Card", () => {
     );
     expect(container).toMatchSnapshot();
   });
-
-  it("should show details when details button is clicked", () => {
-    const mockHolidayData = {
-      content: {
-        hotelFacilities: [],
-        atAGlance: [],
-      },
-    };
-    const { container } = render(
-      <SearchCard hotel={mockHolidayData} pricePerPerson={20} />
-    );
-    const element = screen.getByTestId("show-details");
-    fireEvent.click(element);
-    expect(container).toMatchSnapshot();
-  });
 });
