@@ -55,6 +55,6 @@ Built on node `v20.1.0`.
 
 ## Notes
 
-The items in individual filters are OR based. So if you select two price ranges, items in both price ranges will be shown. Filters themselves are AND based. If you select 3 stars filter and a price range, than item meeting both constraints will be shown.
+The items in individual filters are OR based. So if you select two price ranges, items in both price ranges will be shown. Filters themselves are AND based. If you select 3 stars filter and a price range, than item meeting both constraints will be shown. I have also taken only a few amenities into consideration as I believe it will be a controlled list.
 
 This was atest and I might have had a look at a few more things if it was live code.
