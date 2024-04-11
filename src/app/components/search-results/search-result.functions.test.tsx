@@ -3,7 +3,7 @@ import {
   checkAmenityFilter,
   checkPriceFilter,
   checkIsValid,
-} from "./search-result-functions";
+} from "./search-result.functions";
 import { Amenity, Rating } from "../../../types/filter";
 
 describe("Component > Search Result > functions", () => {

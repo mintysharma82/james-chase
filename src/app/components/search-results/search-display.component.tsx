@@ -1,12 +1,12 @@
 "use client";
 import { BookingResponse } from "@/types/booking";
 import SearchFiltersComponent from "../search-filters/search-filters.component";
-import { ReactElement, useState } from "react";
+import { useState } from "react";
 import { Filters } from "@/types/filter";
 import SearchCard from "../property-card/property-card.component";
 import { ResultContainer } from "./search-results.styles";
 import { AmenityState, RatingsState, PriceState } from "./search-result.types";
-import { checkIsValid } from "./search-result-functions";
+import { checkIsValid } from "./search-result.functions";
 
 export default function SearchDisplay({
   results,
@@ -89,6 +89,7 @@ export default function SearchDisplay({
         priceState
       );
     }
+
     if (valid) {
       return (
         <SearchCard
@@ -101,7 +102,8 @@ export default function SearchDisplay({
     return null;
   });
 
-  //holidayList = holidayList.slice(0, 10); this can enable mock pagination
+  //enable this line for mocked pagination
+  //holidayList = holidayList.slice(0, 10);
 
   return (
     <section className="container">

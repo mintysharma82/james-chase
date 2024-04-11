@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import SearchFilters from "./search-filters.component";
 import React from "react";
 import {
@@ -8,7 +8,7 @@ import {
 } from "./search-filter.const";
 import { screen } from "@testing-library/dom";
 
-describe("Component > Search Filter > Main", () => {
+describe("Component > Search Filter", () => {
   const eventHandlerMock = jest.fn();
 
   it("renders as expected", () => {

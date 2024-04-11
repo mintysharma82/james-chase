@@ -297,6 +297,7 @@ exports[`Component > Search Result > Search Display renders as expected 1`] = `
           </p>
           <button
             class="sc-11f3f108-0 kVrQDz"
+            data-testid="show-details"
           >
             Show Details
           </button>

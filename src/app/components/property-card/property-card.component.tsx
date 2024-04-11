@@ -1,10 +1,5 @@
 "use client";
 import { Hotel } from "@/types/booking";
-import { RatingsKeyMap } from "@/types/filter";
-import {
-  ratingDetails,
-  ratingKeyMap,
-} from "../search-filters/search-filter.const";
 import {
   Card,
   CardActions,
@@ -13,19 +8,12 @@ import {
   Price,
   Button,
 } from "./property-card.styles";
-import SearchCardDetails from "./property-card-details.component";
-import { useState } from "react";
+import { lazy, useState } from "react";
+import { getDisplayDetails } from "./property-card.functions";
 
-const getDisplayDetails = (hotel: Hotel) => {
-  const ratingKey = hotel.content.starRating;
-  const ratingComponent =
-    ratingKey !== undefined
-      ? ratingDetails[ratingKeyMap[ratingKey as keyof RatingsKeyMap]].component
-      : null;
-  return {
-    ratingComponent,
-  };
-};
+const SearchCardDetails = lazy(
+  () => import("./property-card-details.component")
+);
 
 export default function SearchCard({
   hotel,
@@ -43,7 +31,10 @@ export default function SearchCard({
         <h2>{hotel.content.name}</h2>
         <Location>{hotel.content.parentLocation}</Location>
         <p>{ratingComponent}</p>
-        <Button onClick={() => setShowDetails((current) => !current)}>
+        <Button
+          data-testid="show-details"
+          onClick={() => setShowDetails((current) => !current)}
+        >
           Show Details
         </Button>
         {showDetails && (

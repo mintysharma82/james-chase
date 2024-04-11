@@ -1,8 +1,9 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import SearchCard from "./property-card.component";
 import React from "react";
+import { screen } from "@testing-library/dom";
 
-describe("Component > Search Result > Search Card", () => {
+describe("Component > Property Card", () => {
   it("renders with rating as expected", () => {
     const mockHolidayData = {
       content: {
@@ -27,6 +28,21 @@ describe("Component > Search Result > Search Card", () => {
     const { container } = render(
       <SearchCard hotel={mockHolidayData} pricePerPerson={20} />
     );
+    expect(container).toMatchSnapshot();
+  });
+
+  it("should show details when details button is clicked", () => {
+    const mockHolidayData = {
+      content: {
+        hotelFacilities: [],
+        atAGlance: [],
+      },
+    };
+    const { container } = render(
+      <SearchCard hotel={mockHolidayData} pricePerPerson={20} />
+    );
+    const element = screen.getByTestId("show-details");
+    fireEvent.click(element);
     expect(container).toMatchSnapshot();
   });
 });

@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import SearchCardDetails from "./property-card-details.component";
 import React from "react";
 
-describe("Component > Search Result > Search Card Details", () => {
+describe("Component > Property Card > Details", () => {
   it("renders with rating as expected", () => {
     const mockHolidayData = {
       content: {

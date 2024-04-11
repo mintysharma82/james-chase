@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component > Search Result > Search Card Details renders with rating as expected 1`] = `
+exports[`Component > Property Card > Details renders with rating as expected 1`] = `
 <div>
   <div>
     <p>

@@ -72,6 +72,13 @@ export const checkIsValid = (
   priceFilterCount: number,
   priceState: PriceState
 ) => {
+  if (
+    ratingFilterCount <= 0 &&
+    amenityFilterCount <= 0 &&
+    priceFilterCount <= 0
+  ) {
+    return true;
+  }
   if (checkRatingFilter(holiday, ratingFilterCount, ratingsState) === false) {
     return false;
   }
