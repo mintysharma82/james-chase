@@ -1,0 +1,15 @@
+.filter-container {
+  width: 20%;
+}
+
+.filter-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.filter-container input[type="checkbox"] {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+  border: 1px solid #d9d9d9;
+}

@@ -1,0 +1,178 @@
+@font-face {
+  font-family: "Gotham, Gotham-Light";
+  src: url("/fonts/gotham-light.woff2") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham, Gotham-Light";
+  src: url("/fonts/gotham-medium.woff2") format("truetype");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Gotham, Gotham-Book";
+  src: url("/fonts/gotham-book.woff2") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham, Gotham-Book";
+  src: url("/fonts/gotham-medium.woff2") format("truetype");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Gotham, Gotham-Medium";
+  src: url("/fonts/gotham-medium.woff2") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --token-color-colour-brand-red: #da0530;
+  --token-color-colour-brand-purple: #381246;
+  --token-color-colour-background-primary: #ffffff;
+  --token-color-colour-background-secondary: #f5f5f6;
+  --token-color-colour-background-tertiary: #e6e7e8;
+  --token-color-colour-surface-elevation-0: #ffffff;
+  --token-color-colour-surface-elevation-1: #ffffff;
+  --token-color-colour-border-minimal: #e6e7e8;
+  --token-color-colour-border-decorative: #d7d8da;
+  --token-color-colour-border-accessible: #808489;
+  --token-color-colour-border-inverted: #030c16;
+  --token-color-colour-border-inverted-minimal: #1c242d;
+  --token-color-colour-border-inverted-decorative: #303840;
+  --token-color-colour-text-primary: #030c16;
+  --token-color-colour-text-secondary: #676d73;
+  --token-color-colour-text-tertiary: #b8bbbe;
+  --token-color-colour-text-inverted-primary: #ffffff;
+  --token-color-colour-text-inverted-secondary: #808489;
+  --token-color-colour-text-interactive: #da0530;
+  --token-color-colour-text-interactive-minimal: #030c16;
+  --token-color-colour-text-error: #a70d2e;
+  --token-color-colour-text-warning: #be4a0a;
+  --token-color-colour-text-success: #077950;
+  --token-color-colour-text-info: #0072bd;
+  --token-color-colour-text-promotional: #4f145b;
+  --token-color-colour-text-disabled: #808489;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Gotham, Gotham-Book";
+  font-weight: normal;
+  color: var(--token-color-colour-text-primary);
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  background-color: var(--token-color-colour-background-primary);
+}
+
+header {
+  background-color: var(--token-color-colour-background-primary);
+  box-shadow: inset 0px -1px 0px #dedfe1;
+  padding: 16px 0;
+  margin-bottom: 32px;
+}
+
+.wrapper {
+  width: 95%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fullbleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+a {
+  color: var(--token-color-colour-brand-red);
+}
+
+.container {
+  display: flex;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+/* Star SVG files are a copy over from live site */
+
+.rating-star::before {
+  position: relative;
+  transform: scale(0.8);
+  display: inline-block;
+  top: -6px;
+  left: -8px;
+}
+.rating-3star::before {
+  content: url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star.svg") url("/icons/virgin-star-empty.svg")
+    url("/icons/virgin-star-empty.svg");
+}
+
+.rating-3plus::before {
+  content: url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star.svg") url("/icons/virgin-star-half.svg")
+    url("/icons/virgin-star-empty.svg");
+}
+
+.rating-4star::before {
+  content: url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star-empty.svg");
+}
+
+.rating-4plus::before {
+  content: url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star-half.svg");
+}
+
+.rating-5star::before {
+  content: url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star.svg");
+}
+
+.rating-5plus::before {
+  content: url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star.svg") url("/icons/virgin-star.svg")
+    url("/icons/virgin-star.svg");
+}
+
+.rating-5plus::after {
+  content: "plus";
+  font-size: 1rem;
+  color: #5f6f7c;
+  text-transform: uppercase;
+  position: relative;
+  top: -7px;
+  left: -14px;
+}
+
+.rating-villa::before {
+  content: "villa";
+  font-size: 1.4rem;
+  color: #e10a0a;
+  font-weight: bold;
+  text-transform: uppercase;
+  left: -4px;
+}
