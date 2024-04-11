@@ -1,6 +1,6 @@
 "use client";
 import { Hotel } from "@/types/booking";
-import { Rating, RatingsKeyMap } from "@/types/filter";
+import { RatingsKeyMap } from "@/types/filter";
 import {
   ratingDetails,
   ratingKeyMap,
@@ -10,19 +10,13 @@ import {
   CardActions,
   CardDetails,
   Location,
-  List,
   Price,
-} from "./search-results.styles";
+  Button,
+} from "./property-card.styles";
+import SearchCardDetails from "./property-card-details.component";
+import { useState } from "react";
 
-export type RatingsState = {
-  [key in Rating]?: boolean;
-};
-
-const getDisplayDetails = (
-  hotel: Hotel,
-  ratingFilterCount: number,
-  ratingsState: RatingsState
-) => {
+const getDisplayDetails = (hotel: Hotel) => {
   const ratingKey = hotel.content.starRating;
   const ratingComponent =
     ratingKey !== undefined
@@ -36,19 +30,12 @@ const getDisplayDetails = (
 export default function SearchCard({
   hotel,
   pricePerPerson,
-  ratingFilterCount,
-  ratingsState,
 }: {
   hotel: Hotel;
   pricePerPerson: number;
-  ratingFilterCount: number;
-  ratingsState: RatingsState;
 }) {
-  const { ratingComponent } = getDisplayDetails(
-    hotel,
-    ratingFilterCount,
-    ratingsState
-  );
+  const [showDetails, setShowDetails] = useState<boolean>(false);
+  const { ratingComponent } = getDisplayDetails(hotel);
 
   return (
     <Card id={hotel.id}>
@@ -56,24 +43,22 @@ export default function SearchCard({
         <h2>{hotel.content.name}</h2>
         <Location>{hotel.content.parentLocation}</Location>
         <p>{ratingComponent}</p>
-        <p>{hotel.boardBasis}</p>
-        <List>
-          {hotel.content.atAGlance.map((item) => (
-            <li key={item} dangerouslySetInnerHTML={{ __html: item }}></li>
-          ))}
-        </List>
+        <Button onClick={() => setShowDetails((current) => !current)}>
+          Show Details
+        </Button>
+        {showDetails && (
+          <SearchCardDetails
+            boardBasis={hotel.boardBasis}
+            atAGlance={hotel.content.atAGlance}
+            hotelFacilities={hotel.content.hotelFacilities}
+          />
+        )}
       </CardDetails>
       <CardActions>
         <Price>
           &#163;{pricePerPerson}
           <span>pp</span>
         </Price>
-        <h3>Amenities</h3>
-        <List>
-          {hotel.content.hotelFacilities.map((item) => (
-            <li key={item} dangerouslySetInnerHTML={{ __html: item }}></li>
-          ))}
-        </List>
       </CardActions>
     </Card>
   );

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component > Search Result > Search Card renders with rating as expected 1`] = `
+<div>
+  <article
+    class="sc-11f3f108-1 ksixbF"
+  >
+    <div
+      class="sc-11f3f108-2 iqfgeT"
+    >
+      <h2 />
+      <p
+        class="sc-11f3f108-3 eTIoTn"
+      />
+      <p>
+        <span
+          class="rating-5star rating-star"
+        />
+      </p>
+      <button
+        class="sc-11f3f108-0 kVrQDz"
+      >
+        Show Details
+      </button>
+    </div>
+    <div
+      class="sc-11f3f108-6 ehxttO"
+    >
+      <div
+        class="sc-11f3f108-5 fyNlvK"
+      >
+        £
+        500
+        <span>
+          pp
+        </span>
+      </div>
+    </div>
+  </article>
+</div>
+`;
+
+exports[`Component > Search Result > Search Card renders without rating as expected 1`] = `
+<div>
+  <article
+    class="sc-11f3f108-1 ksixbF"
+  >
+    <div
+      class="sc-11f3f108-2 iqfgeT"
+    >
+      <h2 />
+      <p
+        class="sc-11f3f108-3 eTIoTn"
+      />
+      <p />
+      <button
+        class="sc-11f3f108-0 kVrQDz"
+      >
+        Show Details
+      </button>
+    </div>
+    <div
+      class="sc-11f3f108-6 ehxttO"
+    >
+      <div
+        class="sc-11f3f108-5 fyNlvK"
+      >
+        £
+        20
+        <span>
+          pp
+        </span>
+      </div>
+    </div>
+  </article>
+</div>
+`;

@@ -1,11 +1,11 @@
 "use client";
-import { BookingResponse, Holiday } from "@/types/booking";
+import { BookingResponse } from "@/types/booking";
 import SearchFiltersComponent from "../search-filters/search-filters.component";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { Filters } from "@/types/filter";
-import SearchCard from "./search-card.component";
+import SearchCard from "../property-card/property-card.component";
 import { ResultContainer } from "./search-results.styles";
-import { AmenityState, RatingsState, PriceState } from "./search-result-types";
+import { AmenityState, RatingsState, PriceState } from "./search-result.types";
 import { checkIsValid } from "./search-result-functions";
 
 export default function SearchDisplay({
@@ -25,7 +25,7 @@ export default function SearchDisplay({
     const key = target.getAttribute("data-filter-key") as string;
     switch (filterType) {
       case Filters.StarRating:
-        setRatingsState((oldState) => {
+        setRatingsState((oldState: RatingsState) => {
           const newState = { ...oldState };
           if (checked === false) {
             delete newState[key as keyof RatingsState];
@@ -39,7 +39,7 @@ export default function SearchDisplay({
         break;
 
       case Filters.Amenities:
-        setAmenityState((oldState) => {
+        setAmenityState((oldState: AmenityState) => {
           const newState = { ...oldState };
           if (checked === false) {
             delete newState[key as keyof AmenityState];
@@ -52,7 +52,7 @@ export default function SearchDisplay({
         });
         break;
       case Filters.Price:
-        setPriceState((oldState) => {
+        setPriceState((oldState: PriceState) => {
           const newState = { ...oldState };
           if (checked === false) {
             delete newState[key as keyof PriceState];
@@ -71,37 +71,46 @@ export default function SearchDisplay({
         break;
     }
   };
+  let holidayList = results.holidays.map((holiday) => {
+    //I can also use filter here, but if I do so... I will have to map through the components later anyways
+    let valid = true;
+    if (
+      amenityFilterCount > 0 ||
+      priceFilterCount > 0 ||
+      ratingFilterCount > 0
+    ) {
+      valid = checkIsValid(
+        holiday,
+        ratingFilterCount,
+        ratingsState,
+        amenityFilterCount,
+        amenityState,
+        priceFilterCount,
+        priceState
+      );
+    }
+    if (valid) {
+      return (
+        <SearchCard
+          key={holiday.hotel.id}
+          hotel={holiday.hotel}
+          pricePerPerson={holiday.pricePerPerson}
+        />
+      );
+    }
+    return null;
+  });
 
-  const holidays = results.holidays.filter((holiday) =>
-    checkIsValid(
-      holiday,
-      ratingFilterCount,
-      ratingsState,
-      amenityFilterCount,
-      amenityState,
-      priceFilterCount,
-      priceState
-    )
-  );
+  //holidayList = holidayList.slice(0, 10); this can enable mock pagination
 
   return (
     <section className="container">
       <SearchFiltersComponent handleChange={handleFilterChange} />
       <ResultContainer id="search-results">
         <section>
-          <h2>{holidays.length} results found</h2>
+          <h2>{holidayList.length} results found</h2>
         </section>
-        {holidays.map((holiday) => {
-          return (
-            <SearchCard
-              key={holiday.hotel.id}
-              hotel={holiday.hotel}
-              pricePerPerson={holiday.pricePerPerson}
-              ratingFilterCount={ratingFilterCount}
-              ratingsState={ratingsState}
-            />
-          );
-        })}
+        {holidayList}
       </ResultContainer>
     </section>
   );

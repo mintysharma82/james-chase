@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component > Search Filter > Main renders as expected 1`] = `
+<div>
+  <aside
+    class="sc-fb479cb7-0 ihHGUS"
+  >
+    <h2>
+      Filter By...
+    </h2>
+    <h3>
+      STAR RATING
+    </h3>
+    <ul>
+      <li>
+        <input
+          aria-label="include 5 star plus"
+          data-filter-key="5+"
+          data-testid="5-plus"
+          id="5-plus"
+          type="checkbox"
+        />
+        <span
+          class="rating-5plus rating-star"
+        />
+      </li>
+      <li>
+        <input
+          aria-label="include 5 star"
+          data-filter-key="5"
+          data-testid="5-star"
+          id="5-star"
+          type="checkbox"
+        />
+        <span
+          class="rating-5star rating-star"
+        />
+      </li>
+      <li>
+        <input
+          aria-label="include 4 star plus"
+          data-filter-key="4+"
+          data-testid="4-plus"
+          id="4-plus"
+          type="checkbox"
+        />
+        <span
+          class="rating-4plus rating-star"
+        />
+      </li>
+      <li>
+        <input
+          aria-label="include 4 star"
+          data-filter-key="4"
+          data-testid="4-star"
+          id="4-star"
+          type="checkbox"
+        />
+        <span
+          class="rating-4star rating-star"
+        />
+      </li>
+      <li>
+        <input
+          aria-label="include 3 star plus"
+          data-filter-key="3+"
+          data-testid="3-plus"
+          id="3-plus"
+          type="checkbox"
+        />
+        <span
+          class="rating-3plus rating-star"
+        />
+      </li>
+      <li>
+        <input
+          aria-label="include 3 star"
+          data-filter-key="3"
+          data-testid="3-star"
+          id="3-star"
+          type="checkbox"
+        />
+        <span
+          class="rating-3star rating-star"
+        />
+      </li>
+      <li>
+        <input
+          aria-label="include villas"
+          data-filter-key="Villas"
+          data-testid="villa"
+          id="villa"
+          type="checkbox"
+        />
+        <span
+          class="rating-villa rating-star"
+        />
+      </li>
+    </ul>
+    <h3>
+      PRICE (PP)
+    </h3>
+    <ul>
+      <li>
+        <input
+          aria-label="from 0 to 970"
+          data-filter-key="R0-970"
+          data-price-max="970"
+          data-price-min="0"
+          data-testid="R0-970"
+          id="R0-970"
+          type="checkbox"
+        />
+        <label
+          for="R0-970"
+        >
+          £
+          0
+           - £
+          970
+        </label>
+      </li>
+      <li>
+        <input
+          aria-label="from 971 to 1190"
+          data-filter-key="R971-1190"
+          data-price-max="1190"
+          data-price-min="971"
+          data-testid="R971-1190"
+          id="R971-1190"
+          type="checkbox"
+        />
+        <label
+          for="R971-1190"
+        >
+          £
+          971
+           - £
+          1190
+        </label>
+      </li>
+      <li>
+        <input
+          aria-label="from 1191 to 1600"
+          data-filter-key="R1191-1600"
+          data-price-max="1600"
+          data-price-min="1191"
+          data-testid="R1191-1600"
+          id="R1191-1600"
+          type="checkbox"
+        />
+        <label
+          for="R1191-1600"
+        >
+          £
+          1191
+           - £
+          1600
+        </label>
+      </li>
+      <li>
+        <input
+          aria-label="1601 onwards"
+          data-filter-key="R1601"
+          data-price-max="1000000000"
+          data-price-min="1601"
+          data-testid="R1601"
+          id="R1601"
+          type="checkbox"
+        />
+        <label
+          for="R1601"
+        >
+          Above £
+          1601
+        </label>
+      </li>
+    </ul>
+    <h3>
+      AMENITIES
+    </h3>
+    <ul>
+      <li>
+        <input
+          aria-label="Bar"
+          data-filter-key="Bar"
+          data-testid="filter-bar"
+          id="filter-bar"
+          type="checkbox"
+        />
+        <label
+          for="filter-bar"
+        >
+          Bar
+        </label>
+      </li>
+      <li>
+        <input
+          aria-label="Free Parking"
+          data-filter-key="Free Parking"
+          data-testid="free-parking"
+          id="free-parking"
+          type="checkbox"
+        />
+        <label
+          for="free-parking"
+        >
+          Free Parking
+        </label>
+      </li>
+      <li>
+        <input
+          aria-label="Internet Access"
+          data-filter-key="Internet Access"
+          data-testid="internet-access"
+          id="internet-access"
+          type="checkbox"
+        />
+        <label
+          for="internet-access"
+        >
+          Internet Access
+        </label>
+      </li>
+      <li>
+        <input
+          aria-label="Restaurant"
+          data-filter-key="Restaurant"
+          data-testid="restaurant"
+          id="restaurant"
+          type="checkbox"
+        />
+        <label
+          for="restaurant"
+        >
+          Restaurant
+        </label>
+      </li>
+      <li>
+        <input
+          aria-label="Room Service"
+          data-filter-key="Room Service"
+          data-testid="room-service"
+          id="room-service"
+          type="checkbox"
+        />
+        <label
+          for="room-service"
+        >
+          Room Service
+        </label>
+      </li>
+      <li>
+        <input
+          aria-label="Swimming Pool"
+          data-filter-key="Swimming Pool"
+          data-testid="swimming-pool"
+          id="swimming-pool"
+          type="checkbox"
+        />
+        <label
+          for="swimming-pool"
+        >
+          Swimming Pool
+        </label>
+      </li>
+    </ul>
+  </aside>
+</div>
+`;

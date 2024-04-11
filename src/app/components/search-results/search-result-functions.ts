@@ -1,14 +1,13 @@
 import { Holiday } from "@/types/booking";
-import { AmenityState, PriceState, RatingsState } from "./search-result-types";
+import { AmenityState, PriceState, RatingsState } from "./search-result.types";
 
 //each of the check only executes if the filter related with them is set
 
-const checkRatingFilter = (
+export const checkRatingFilter = (
   holiday: Holiday,
   ratingFilterCount: number,
   ratingsState: RatingsState
 ) => {
-  console.log(holiday, ratingFilterCount, ratingsState);
   return ratingFilterCount > 0 &&
     ratingsState[holiday.hotel.content.starRating as keyof RatingsState] !==
       true
@@ -16,7 +15,7 @@ const checkRatingFilter = (
     : true;
 };
 
-const checkAmenityFilter = (
+export const checkAmenityFilter = (
   holiday: Holiday,
   amenityFilterCount: number,
   amenityState: AmenityState
@@ -40,7 +39,7 @@ const checkAmenityFilter = (
   return amenityShow;
 };
 
-const checkPriceFilter = (
+export const checkPriceFilter = (
   holiday: Holiday,
   priceFilterCount: number,
   priceState: PriceState

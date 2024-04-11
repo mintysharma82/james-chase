@@ -22,6 +22,7 @@ export default function SearchFiltersComponent({
             <li key={rating.classId}>
               <input
                 id={rating.classId}
+                data-testid={rating.classId}
                 type="checkbox"
                 aria-label={rating.description}
                 data-filter-key={rating.key}
@@ -41,6 +42,7 @@ export default function SearchFiltersComponent({
             <li key={pricing.classId}>
               <input
                 id={pricing.classId}
+                data-testid={pricing.classId}
                 type="checkbox"
                 aria-label={pricing.description}
                 data-filter-key={pricing.classId}
@@ -68,6 +70,7 @@ export default function SearchFiltersComponent({
             <li key={amenity.classId}>
               <input
                 id={amenity.classId}
+                data-testid={amenity.classId}
                 type="checkbox"
                 aria-label={amenity.key}
                 data-filter-key={amenity.key}

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component > Search Result > Search Card Details renders with rating as expected 1`] = `
+<div>
+  <div>
+    <p>
+      Room
+    </p>
+    <ul
+      class="sc-11f3f108-4 eBwZep"
+    >
+      <li>
+        My Feature
+      </li>
+    </ul>
+    <h3>
+      Amenities
+    </h3>
+    <ul
+      class="sc-11f3f108-4 eBwZep"
+    >
+      <li>
+        Restaurant
+      </li>
+      <li>
+        Swimming Pool
+      </li>
+    </ul>
+  </div>
+</div>
+`;

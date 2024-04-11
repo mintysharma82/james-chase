@@ -1,4 +1,3 @@
-import { ReactComponentElement, ReactElement } from "react";
 import {
   Amenity,
   AmenityDetails,
